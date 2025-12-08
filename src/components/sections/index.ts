@@ -1,0 +1,8 @@
+export { Hero } from "./hero"
+export { Stats } from "./stats"
+export { About } from "./about"
+export { ServicesPreview } from "./services-preview"
+export { Treatments } from "./treatments"
+export { Testimonials } from "./testimonials"
+export { Contact } from "./contact"
+export { CTA } from "./cta"
