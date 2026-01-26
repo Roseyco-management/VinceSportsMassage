@@ -37,12 +37,14 @@ export function About() {
               className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-primary-subtle to-white flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
             >
               <Image
-                src="/images/vince-selfie-transparent.png"
+                src="/images/vince-selfie-transparent.webp"
                 alt="Vince McDowell - Sports Massage Therapist"
                 width={500}
                 height={667}
                 className="object-contain"
                 priority
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjY2NyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjY2NyIgZmlsbD0iI2YxZjVmOSIvPjwvc3ZnPg=="
               />
             </motion.div>
             {/* Accent shape */}

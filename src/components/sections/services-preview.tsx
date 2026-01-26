@@ -13,28 +13,28 @@ const featuredServices = [
     name: "Therapeutic Bodywork",
     description: "Comprehensive hands-on therapy to address pain, tension, and mobility issues through targeted techniques.",
     icon: Hand,
-    image: "/images/services/vince-back-massage.png",
+    image: "/images/services/vince-back-massage.webp",
   },
   {
     slug: "posture-correction",
     name: "Posture Correction",
     description: "Realign your body and fix postural imbalances for lasting relief from chronic pain and discomfort.",
     icon: User,
-    image: "/images/services/vince-posture-assessment.png",
+    image: "/images/services/vince-posture-assessment.webp",
   },
   {
     slug: "breathwork-coaching",
     name: "Breathwork Coaching",
     description: "Optimize your breathing patterns for better performance, reduced stress, and faster recovery.",
     icon: Wind,
-    image: "/images/services/vince-training-session.png",
+    image: "/images/services/vince-training-session.webp",
   },
   {
     slug: "remediation",
     name: "Remediation",
     description: "Targeted treatment plans for injury recovery and rehabilitation to get you back to full function.",
     icon: Activity,
-    image: "/images/services/vince-back-massage.png",
+    image: "/images/services/vince-back-massage.webp",
   },
 ]
 
@@ -62,7 +62,7 @@ export function ServicesPreview() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {featuredServices.map((service, index) => (
             <motion.div
               key={service.slug}
@@ -79,6 +79,8 @@ export function ServicesPreview() {
                     alt={service.name}
                     fill
                     className="object-contain group-hover:scale-105 transition-transform duration-500"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUzMyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUzMyIgZmlsbD0iI2YxZjVmOSIvPjwvc3ZnPg=="
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 

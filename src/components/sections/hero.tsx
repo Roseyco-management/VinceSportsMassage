@@ -55,7 +55,7 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
               <span className="text-white">●</span> <span className="italic">Move Better.</span><br />
               <span className="font-extrabold">Pain-Free.</span>
             </h1>
