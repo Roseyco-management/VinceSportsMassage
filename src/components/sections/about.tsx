@@ -27,18 +27,52 @@ export function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-100 flex items-end justify-center">
-              <Image
-                src="/images/Vince1.png"
-                alt="Vince McDowell - Sports Massage Therapist"
-                width={400}
-                height={500}
-                className="object-contain"
-                priority
-              />
+            <div className="grid grid-cols-2 gap-4">
+              {/* Existing portrait */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+                className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-100 flex items-end justify-center shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <Image
+                  src="/images/Vince1.png"
+                  alt="Vince McDowell - Sports Massage Therapist"
+                  width={400}
+                  height={500}
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
+
+              {/* New posture image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+                className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-100 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <Image
+                  src="/images/about/vince-posture.png"
+                  alt="Posture Assessment"
+                  width={400}
+                  height={500}
+                  className="object-cover"
+                />
+              </motion.div>
             </div>
             {/* Accent shape */}
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-cyan-100 rounded-2xl -z-10" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="absolute -bottom-6 -right-6 w-48 h-48 bg-cyan-100 rounded-2xl -z-10"
+            />
           </motion.div>
 
           {/* Content */}
@@ -56,14 +90,15 @@ export function About() {
             </h2>
             <div className="prose prose-slate max-w-none mb-8">
               <p className="text-lg text-slate-600">
-                With over a decade of experience in sports massage and bodywork therapy,
-                I&apos;ve helped hundreds of clients overcome pain, improve their posture,
-                and achieve their physical goals.
+                Vince McDowell is a Bodywork Specialist, Personal Trainer, and Posture
+                Specialist based in Northern Ireland. With over a decade of experience,
+                he combines hands-on bodywork therapy, posture correction, and breathwork
+                coaching to help clients move better, feel stronger, and live pain-free.
               </p>
               <p className="text-slate-600">
-                Whether you&apos;re an athlete looking to enhance performance, dealing with
-                chronic pain, or simply want to move better in your daily life, I provide
-                personalized treatment plans tailored to your unique needs.
+                Whether you&apos;re recovering from injury or seeking long-term posture and
+                breathing improvements, Vince provides modern, personalised care that
+                delivers results.
               </p>
             </div>
 

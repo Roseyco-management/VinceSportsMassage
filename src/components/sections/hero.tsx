@@ -20,6 +20,20 @@ export function Hero() {
           className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
           style={{ border: 'none' }}
         />
+
+        {/* Optional: Local Video Background */}
+        {/* Uncomment to use local video instead of YouTube */}
+        {/*
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-1/2 left-1/2 w-full h-full object-cover -translate-x-1/2 -translate-y-1/2"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+        */}
       </div>
 
       <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 relative z-20">

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react"
 import { siteConfig, navLinks, services } from "@/lib/constants"
 

@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react"
-import { siteConfig } from "@/lib/constants"
+import { Phone, Mail, MapPin, Clock, CheckCircle, Check } from "lucide-react"
+import { siteConfig, pricing } from "@/lib/constants"
 
 const benefits = [
   "Personalised treatment tailored to your needs",
@@ -64,6 +64,108 @@ export function BookingPage() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-12 md:py-16 bg-gradient-to-b from-white to-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+              Session Pricing
+            </h2>
+            <p className="text-slate-600">
+              Transparent pricing with no hidden fees
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {pricing.map((plan, index) => (
+              <motion.div
+                key={plan.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                <Card className={`h-full ${'popular' in plan && plan.popular ? 'border-2 border-cyan-500' : ''}`}>
+                  <CardContent className="p-4">
+                    <h3 className="font-bold text-slate-900 mb-1">{plan.name}</h3>
+                    <div className="flex items-baseline mb-2">
+                      <span className="text-3xl font-bold text-slate-900">£{plan.price}</span>
+                    </div>
+                    <p className="text-sm text-slate-600 mb-3">{plan.description}</p>
+                    {'savings' in plan && plan.savings && (
+                      <p className="text-xs font-semibold text-green-600 mb-2">{plan.savings}</p>
+                    )}
+                    {'features' in plan && plan.features && (
+                      <ul className="space-y-1">
+                        {plan.features.slice(0, 2).map((feature, i) => (
+                          <li key={i} className="flex items-start text-xs">
+                            <Check className="h-3 w-3 text-cyan-600 mr-1 flex-shrink-0 mt-0.5" />
+                            <span className="text-slate-600">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What to Expect */}
+      <section className="py-12 md:py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-2xl mx-auto mb-8"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+              What to Expect
+            </h2>
+            <p className="text-slate-600">
+              Your first session is designed to understand your needs and create
+              a personalised treatment plan.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {whatToExpect.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                <Card className="h-full">
+                  <CardContent className="p-4">
+                    <div className="w-8 h-8 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold mb-3 text-sm">
+                      {index + 1}
+                    </div>
+                    <h3 className="text-base font-semibold text-slate-900 mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm">
+                      {step.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Booking Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -95,15 +197,15 @@ export function BookingPage() {
                     </div>
                   </div>
 
-                  {/* Calendly Widget */}
-                  <div className="min-h-[650px]">
+                  {/* Calendly Widget - Responsive */}
+                  <div className="min-h-[600px] md:min-h-[650px]">
                     <iframe
                       src={`${siteConfig.calendly}?hide_gdpr_banner=1&background_color=ffffff&text_color=1e293b&primary_color=0891b2`}
                       width="100%"
                       height="650"
                       frameBorder="0"
                       title="Schedule Appointment"
-                      className="w-full"
+                      className="w-full h-[600px] md:h-[650px]"
                     />
                   </div>
                 </CardContent>
@@ -201,57 +303,9 @@ export function BookingPage() {
         </div>
       </section>
 
-      {/* What to Expect */}
-      <section className="py-16 md:py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-2xl mx-auto mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              What to Expect
-            </h2>
-            <p className="text-lg text-slate-600">
-              Your first session is designed to understand your needs and create
-              a personalised treatment plan.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whatToExpect.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full">
-                  <CardContent className="p-6">
-                    <div className="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold mb-4">
-                      {index + 1}
-                    </div>
-                    <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm">
-                      {step.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Image Banner */}
-      <section className="relative h-[400px] bg-slate-800">
+      <section className="relative h-[400px] bg-gradient-to-br from-cyan-600 via-slate-700 to-slate-900">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-transparent z-10" />
-        <div className="absolute inset-0 bg-[url('/images/booking-banner.jpg')] bg-cover bg-center" />
         <div className="relative z-20 container mx-auto px-4 h-full flex items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}

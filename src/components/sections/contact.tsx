@@ -114,7 +114,7 @@ export function Contact() {
             <div className="aspect-square lg:aspect-auto lg:h-full min-h-[400px] rounded-2xl overflow-hidden bg-slate-200">
               {/* Google Maps Embed */}
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2329.5!2d${siteConfig.geo.longitude}!3d${siteConfig.geo.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTTCsDE5JzQyLjYiTiA1wrA0Mic0OS4zIlc!5e0!3m2!1sen!2suk!4v1234567890`}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2325.464973555185!2d-5.785161623111953!3d54.34876407259703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486115a41666c9bb%3A0x925dbc67f33d0eb9!2sVince%20%7C%20Sports%20Massage%2C%20Bodywork%20Therapist%20%26%20Posture%20Specialist!5e0!3m2!1sen!2scz!4v1769432305065!5m2!1sen!2scz"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

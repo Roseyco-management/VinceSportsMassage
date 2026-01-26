@@ -145,10 +145,120 @@ export const services = [
 
 // Stats for homepage
 export const stats = [
-  { value: "500+", label: "Clients Helped" },
-  { value: "10+", label: "Years Experience" },
-  { value: "5.0", label: "Google Rating" },
-  { value: "62", label: "Reviews" },
+  { value: "250+", label: "Sessions Conducted" },
+  { value: "50+", label: "Certifications" },
+  { value: "100%", label: "Client Satisfaction" },
+  { value: "7 Days", label: "Weekly Availability" },
+] as const
+
+// Pricing for services
+export const pricing = [
+  {
+    name: "Sports Massage & Bodywork",
+    duration: "60 minutes",
+    price: 55,
+    description: "Personalized session tailored to your needs",
+    features: [
+      "Hands-on treatment",
+      "Posture assessment",
+      "Breathwork coaching",
+      "Rehabilitation guidance"
+    ],
+    popular: true,
+    slug: "sports-massage-bodywork"
+  },
+  {
+    name: "Extended Session",
+    duration: "90 minutes",
+    price: 80,
+    description: "Deep work for chronic issues",
+    features: [
+      "Extended treatment time",
+      "Comprehensive assessment",
+      "Multiple techniques"
+    ],
+    slug: "extended-session"
+  },
+  {
+    name: "3-Session Package",
+    duration: "60 minutes each",
+    price: 150,
+    savings: "Save £15",
+    description: "Ideal for ongoing recovery",
+    features: [
+      "3 x 60-minute sessions",
+      "Flexible scheduling",
+      "Progress tracking"
+    ],
+    slug: "package-3"
+  },
+  {
+    name: "5-Session Package",
+    duration: "60 minutes each",
+    price: 240,
+    savings: "Save £35",
+    description: "Best value for committed recovery",
+    features: [
+      "5 x 60-minute sessions",
+      "Priority booking",
+      "Personalized program"
+    ],
+    slug: "package-5"
+  }
+] as const
+
+// FAQ data
+export const faqs = [
+  {
+    question: "How much does a session cost?",
+    answer: "A standard 60-minute Sports Massage & Bodywork session is £55. I also offer 90-minute extended sessions for £80, and package deals for ongoing treatment (3 sessions for £150 or 5 sessions for £240).",
+    category: "pricing"
+  },
+  {
+    question: "What should I bring to my first appointment?",
+    answer: "Just bring yourself and any relevant medical information. Wear comfortable clothing that allows easy movement. I provide everything else including towels and treatment equipment.",
+    category: "preparation"
+  },
+  {
+    question: "What's your cancellation policy?",
+    answer: "I require 24 hours notice for cancellations or rescheduling. Appointments cancelled with less than 24 hours notice may be subject to a cancellation fee.",
+    category: "booking"
+  },
+  {
+    question: "How long is a typical session?",
+    answer: "Standard sessions are 60 minutes, which includes assessment and treatment. Extended sessions are 90 minutes for more comprehensive work on chronic issues.",
+    category: "session"
+  },
+  {
+    question: "How many sessions will I need?",
+    answer: "It depends on your individual needs. Some clients see improvement after one session, while chronic issues may require 4-6 sessions. During your first appointment, I'll assess your condition and recommend a personalized treatment plan.",
+    category: "treatment"
+  },
+  {
+    question: "Do I need to undress?",
+    answer: "You'll be draped with towels throughout the session, and only the area being worked on will be exposed. Many clients choose to undress to their comfort level - shorts and sports bra work well. Your comfort and privacy are my priority.",
+    category: "session"
+  },
+  {
+    question: "What if I have an injury or medical condition?",
+    answer: "Please let me know about any injuries, medical conditions, or concerns before your session. I'm trained to adapt treatments for various conditions, but some conditions may require medical clearance first.",
+    category: "medical"
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "I accept cash, card payments (Visa, Mastercard), and bank transfers. Payment is due at the time of service.",
+    category: "payment"
+  },
+  {
+    question: "Where are you located?",
+    answer: "I'm located at 79 Woodgrange Road, Downpatrick, BT30 8JH, Northern Ireland. There's free parking available nearby.",
+    category: "location"
+  },
+  {
+    question: "Do you offer mobile/home visits?",
+    answer: "Currently all sessions are at my treatment space in Downpatrick. This allows me to use specialized equipment and provides the best treatment environment.",
+    category: "location"
+  }
 ] as const
 
 // Brand colors
