@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -12,24 +13,28 @@ const featuredServices = [
     name: "Therapeutic Bodywork",
     description: "Comprehensive hands-on therapy to address pain, tension, and mobility issues through targeted techniques.",
     icon: Hand,
+    image: "/images/services/vince-back-massage.png",
   },
   {
     slug: "posture-correction",
     name: "Posture Correction",
     description: "Realign your body and fix postural imbalances for lasting relief from chronic pain and discomfort.",
     icon: User,
+    image: "/images/services/vince-posture-coaching.png",
   },
   {
     slug: "breathwork-coaching",
     name: "Breathwork Coaching",
     description: "Optimize your breathing patterns for better performance, reduced stress, and faster recovery.",
     icon: Wind,
+    image: "/images/services/vince-training-session.png",
   },
   {
     slug: "remediation",
     name: "Remediation",
     description: "Targeted treatment plans for injury recovery and rehabilitation to get you back to full function.",
     icon: Activity,
+    image: "/images/services/vince-back-massage.png",
   },
 ]
 
@@ -66,11 +71,26 @@ export function ServicesPreview() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow group">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary-muted flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                    <service.icon className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
+              <Card className="h-full hover:shadow-xl transition-all group overflow-hidden">
+                {/* Service Image */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
+                  {/* Icon overlay */}
+                  <div className="absolute bottom-4 left-4">
+                    <div className="w-12 h-12 rounded-lg bg-white/90 backdrop-blur-sm flex items-center justify-center">
+                      <service.icon className="h-6 w-6 text-primary" />
+                    </div>
                   </div>
+                </div>
+
+                <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-slate-900 mb-2">
                     {service.name}
                   </h3>
