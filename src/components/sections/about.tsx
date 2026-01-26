@@ -27,44 +27,24 @@ export function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="grid grid-cols-2 gap-4">
-              {/* Existing portrait */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-                className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-100 flex items-end justify-center shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <Image
-                  src="/images/Vince1.png"
-                  alt="Vince McDowell - Sports Massage Therapist"
-                  width={400}
-                  height={500}
-                  className="object-contain"
-                  priority
-                />
-              </motion.div>
-
-              {/* New posture image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-                className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-100 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <Image
-                  src="/images/about/vince-posture.png"
-                  alt="Posture Assessment"
-                  width={400}
-                  height={500}
-                  className="object-cover"
-                />
-              </motion.div>
-            </div>
+            {/* Vince Portrait */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+              className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-100 flex items-end justify-center shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <Image
+                src="/images/Vince1.png"
+                alt="Vince McDowell - Sports Massage Therapist"
+                width={500}
+                height={667}
+                className="object-contain"
+                priority
+              />
+            </motion.div>
             {/* Accent shape */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
