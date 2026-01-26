@@ -49,7 +49,7 @@ export function ServicesPreview() {
             What I Offer
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
-            Making You Move Better, Feel Better, and Live Your Life
+            Helping you move better, breathe easier, and live pain-free.
           </h2>
           <p className="text-lg text-slate-600">
             Personalized treatments designed to address your specific needs and help you achieve your health goals.

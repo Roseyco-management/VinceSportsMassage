@@ -62,11 +62,8 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-primary font-semibold text-sm uppercase tracking-wide">
-              Meet {siteConfig.owner}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-6">
-              Your Partner in Recovery & Performance
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              Meet Vince McDowell
             </h2>
             <div className="prose prose-slate max-w-none mb-8">
               <p className="text-lg text-slate-600">
