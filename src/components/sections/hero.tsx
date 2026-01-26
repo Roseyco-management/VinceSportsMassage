@@ -57,7 +57,7 @@ export function Hero() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
               Move Better.<br />
-              <span className="text-cyan-400">Feel Better.</span><br />
+              <span className="text-primary-light">Feel Better.</span><br />
               Pain-Free.
             </h1>
 
@@ -70,7 +70,7 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="bg-cyan-500 text-white hover:bg-cyan-600 font-semibold"
+                className="bg-primary-lighter text-white hover:bg-primary font-semibold"
               >
                 <Link href="/booking">
                   Book Your Session
@@ -95,8 +95,8 @@ export function Hero() {
               className="mt-12 inline-flex bg-white/10 backdrop-blur-sm rounded-xl p-4"
             >
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-cyan-400">10+</span>
+                <div className="w-12 h-12 rounded-full bg-primary-lighter/20 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-primary-light">10+</span>
                 </div>
                 <div>
                   <p className="font-semibold text-white">Years</p>

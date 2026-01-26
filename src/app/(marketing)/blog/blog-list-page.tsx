@@ -55,7 +55,7 @@ export function BlogListPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 text-white py-16 md:py-20">
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-primary-dark text-white py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export function BlogListPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-primary-light font-semibold text-sm uppercase tracking-wide">
               Blog
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
@@ -137,7 +137,7 @@ export function BlogListPage() {
                             <Badge variant="secondary" className="mb-3">
                               {post.category}
                             </Badge>
-                            <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors line-clamp-2">
+                            <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-primary transition-colors line-clamp-2">
                               {post.title}
                             </h3>
                             <p className="text-slate-600 text-sm mb-4 line-clamp-2">
@@ -193,7 +193,7 @@ export function BlogListPage() {
                       <Link
                         key={category.slug}
                         href={`/blog?category=${category.slug}`}
-                        className="flex items-center justify-between py-2 text-slate-600 hover:text-cyan-600 transition-colors"
+                        className="flex items-center justify-between py-2 text-slate-600 hover:text-primary transition-colors"
                       >
                         <span>{category.name}</span>
                         <ArrowRight className="h-4 w-4" />
@@ -204,15 +204,15 @@ export function BlogListPage() {
               </Card>
 
               {/* Newsletter / CTA */}
-              <Card className="bg-cyan-600 text-white">
+              <Card className="bg-primary text-white">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-2">
                     Ready to Feel Better?
                   </h3>
-                  <p className="text-cyan-100 text-sm mb-4">
+                  <p className="text-primary-muted text-sm mb-4">
                     Book your session today and start your journey to better health.
                   </p>
-                  <Button asChild className="w-full bg-white text-cyan-700 hover:bg-cyan-50">
+                  <Button asChild className="w-full bg-white text-primary-dark hover:bg-primary-subtle">
                     <Link href="/booking">Book Now</Link>
                   </Button>
                 </CardContent>
@@ -231,7 +231,7 @@ export function BlogListPage() {
                         href={`/blog/${post.slug}`}
                         className="block group"
                       >
-                        <h4 className="text-sm font-medium text-slate-900 group-hover:text-cyan-600 transition-colors line-clamp-2">
+                        <h4 className="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors line-clamp-2">
                           {post.title}
                         </h4>
                         <p className="text-xs text-slate-500 mt-1">

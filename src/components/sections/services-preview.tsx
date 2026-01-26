@@ -45,7 +45,7 @@ export function ServicesPreview() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wide">
             What I Offer
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
@@ -68,8 +68,8 @@ export function ServicesPreview() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow group">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-cyan-100 flex items-center justify-center mb-4 group-hover:bg-cyan-600 transition-colors">
-                    <service.icon className="h-6 w-6 text-cyan-600 group-hover:text-white transition-colors" />
+                  <div className="w-12 h-12 rounded-lg bg-primary-muted flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                    <service.icon className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-2">
                     {service.name}
@@ -79,7 +79,7 @@ export function ServicesPreview() {
                   </p>
                   <Link
                     href={`/services#${service.slug}`}
-                    className="inline-flex items-center text-cyan-600 text-sm font-medium hover:text-cyan-700"
+                    className="inline-flex items-center text-primary text-sm font-medium hover:text-primary-dark"
                   >
                     Learn more
                     <ArrowRight className="ml-1 h-4 w-4" />

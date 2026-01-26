@@ -35,7 +35,7 @@ export function BookingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-cyan-600 via-cyan-700 to-slate-800 text-white py-16 md:py-20">
+      <section className="bg-gradient-to-br from-primary via-primary-dark to-slate-800 text-white py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -43,13 +43,13 @@ export function BookingPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="text-cyan-200 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-primary-muted font-semibold text-sm uppercase tracking-wide">
               Transform Your Health Today
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
               Book Your Session
             </h1>
-            <p className="text-lg text-cyan-100 mb-4">
+            <p className="text-lg text-primary-muted mb-4">
               Ready to experience the benefits of personalised bodywork therapy or posture
               coaching? Book your session now and take the first step towards a healthier,
               more aligned you. Our expert {siteConfig.owner} is here to guide you.
@@ -57,7 +57,7 @@ export function BookingPage() {
             <p className="text-xl font-semibold text-white">
               Bodywork therapy, Breathwork, Rehabilitation & Posture Consultation
             </p>
-            <p className="text-cyan-200 mt-2">
+            <p className="text-primary-muted mt-2">
               Available In-Person and Online
             </p>
           </motion.div>
@@ -91,7 +91,7 @@ export function BookingPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Card className={`h-full ${'popular' in plan && plan.popular ? 'border-2 border-cyan-500' : ''}`}>
+                <Card className={`h-full ${'popular' in plan && plan.popular ? 'border-2 border-primary-lighter' : ''}`}>
                   <CardContent className="p-4">
                     <h3 className="font-bold text-slate-900 mb-1">{plan.name}</h3>
                     <div className="flex items-baseline mb-2">
@@ -105,7 +105,7 @@ export function BookingPage() {
                       <ul className="space-y-1">
                         {plan.features.slice(0, 2).map((feature, i) => (
                           <li key={i} className="flex items-start text-xs">
-                            <Check className="h-3 w-3 text-cyan-600 mr-1 flex-shrink-0 mt-0.5" />
+                            <Check className="h-3 w-3 text-primary mr-1 flex-shrink-0 mt-0.5" />
                             <span className="text-slate-600">{feature}</span>
                           </li>
                         ))}
@@ -149,7 +149,7 @@ export function BookingPage() {
               >
                 <Card className="h-full">
                   <CardContent className="p-4">
-                    <div className="w-8 h-8 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold mb-3 text-sm">
+                    <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-3 text-sm">
                       {index + 1}
                     </div>
                     <h3 className="text-base font-semibold text-slate-900 mb-2">
@@ -182,7 +182,7 @@ export function BookingPage() {
                 <CardContent className="p-0">
                   <div className="bg-slate-50 p-6 border-b">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-primary-muted flex items-center justify-center">
                         <span className="text-2xl">👤</span>
                       </div>
                       <div>
@@ -229,7 +229,7 @@ export function BookingPage() {
                   <div className="space-y-3">
                     {benefits.map((benefit) => (
                       <div key={benefit} className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-slate-600">{benefit}</span>
                       </div>
                     ))}
@@ -245,36 +245,36 @@ export function BookingPage() {
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                        <Phone className="h-5 w-5 text-cyan-600" />
+                      <div className="w-10 h-10 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">
+                        <Phone className="h-5 w-5 text-primary" />
                       </div>
                       <div>
                         <p className="text-sm text-slate-500">Phone</p>
                         <a
                           href={siteConfig.phoneHref}
-                          className="font-medium text-slate-900 hover:text-cyan-600"
+                          className="font-medium text-slate-900 hover:text-primary"
                         >
                           {siteConfig.phone}
                         </a>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                        <Mail className="h-5 w-5 text-cyan-600" />
+                      <div className="w-10 h-10 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">
+                        <Mail className="h-5 w-5 text-primary" />
                       </div>
                       <div>
                         <p className="text-sm text-slate-500">Email</p>
                         <a
                           href={`mailto:${siteConfig.email}`}
-                          className="font-medium text-slate-900 hover:text-cyan-600"
+                          className="font-medium text-slate-900 hover:text-primary"
                         >
                           {siteConfig.email}
                         </a>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="h-5 w-5 text-cyan-600" />
+                      <div className="w-10 h-10 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">
+                        <MapPin className="h-5 w-5 text-primary" />
                       </div>
                       <div>
                         <p className="text-sm text-slate-500">Location</p>
@@ -285,8 +285,8 @@ export function BookingPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                        <Clock className="h-5 w-5 text-cyan-600" />
+                      <div className="w-10 h-10 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">
+                        <Clock className="h-5 w-5 text-primary" />
                       </div>
                       <div>
                         <p className="text-sm text-slate-500">Hours</p>
@@ -304,7 +304,7 @@ export function BookingPage() {
       </section>
 
       {/* Image Banner */}
-      <section className="relative h-[400px] bg-gradient-to-br from-cyan-600 via-slate-700 to-slate-900">
+      <section className="relative h-[400px] bg-gradient-to-br from-primary via-slate-700 to-slate-900">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-transparent z-10" />
         <div className="relative z-20 container mx-auto px-4 h-full flex items-center">
           <motion.div
@@ -327,7 +327,7 @@ export function BookingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-cyan-600">
+      <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -338,13 +338,13 @@ export function BookingPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Book Your Appointment Today
             </h2>
-            <p className="text-cyan-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-primary-muted mb-6 max-w-2xl mx-auto">
               Easily schedule your bodywork or posture coaching session with our user-friendly
               calendar. Choose your preferred date and time to get started.
             </p>
             <a
               href="#top"
-              className="inline-flex items-center justify-center h-12 px-8 bg-white text-cyan-700 font-semibold rounded-lg hover:bg-cyan-50 transition-colors"
+              className="inline-flex items-center justify-center h-12 px-8 bg-white text-primary-dark font-semibold rounded-lg hover:bg-primary-subtle transition-colors"
             >
               Schedule Now
             </a>

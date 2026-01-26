@@ -15,13 +15,13 @@ const trustItems = [
     icon: Users,
     value: "60+",
     label: "5-Star Reviews",
-    color: "text-cyan-600"
+    color: "text-primary"
   },
   {
     icon: Calendar,
     value: "10+",
     label: "Years Experience",
-    color: "text-cyan-600"
+    color: "text-primary"
   },
   {
     icon: Award,

@@ -56,7 +56,7 @@ export function Treatments() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wide">
             Treatments & Therapies
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
@@ -78,14 +78,14 @@ export function Treatments() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link href={`/services#${treatment.slug}`}>
-                <Card className="h-full hover:shadow-lg transition-all group cursor-pointer border-2 border-transparent hover:border-cyan-200">
+                <Card className="h-full hover:shadow-lg transition-all group cursor-pointer border-2 border-transparent hover:border-primary-muted">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-100 transition-colors">
-                        <treatment.icon className="h-7 w-7 text-slate-600 group-hover:text-cyan-600 transition-colors" />
+                      <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-muted transition-colors">
+                        <treatment.icon className="h-7 w-7 text-slate-600 group-hover:text-primary transition-colors" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-slate-900 mb-1 group-hover:text-cyan-700 transition-colors">
+                        <h3 className="text-lg font-semibold text-slate-900 mb-1 group-hover:text-primary-dark transition-colors">
                           {treatment.name}
                         </h3>
                         <p className="text-slate-600 text-sm">

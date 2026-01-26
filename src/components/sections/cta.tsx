@@ -7,7 +7,7 @@ import { ArrowRight, Calendar } from "lucide-react"
 
 export function CTA() {
   return (
-    <section className="py-16 md:py-24 bg-cyan-600">
+    <section className="py-16 md:py-24 bg-primary">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,11 +16,11 @@ export function CTA() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <Calendar className="h-12 w-12 text-cyan-200 mx-auto mb-6" />
+          <Calendar className="h-12 w-12 text-primary-muted mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Book Your Appointment Today
           </h2>
-          <p className="text-lg text-cyan-100 mb-8">
+          <p className="text-lg text-primary-muted mb-8">
             Take the first step towards a healthier, pain-free you. Schedule your session
             now and experience the difference professional bodywork can make.
           </p>
@@ -28,7 +28,7 @@ export function CTA() {
             <Button
               asChild
               size="lg"
-              className="bg-white text-cyan-700 hover:bg-cyan-50 font-semibold"
+              className="bg-white text-primary-dark hover:bg-primary-subtle font-semibold"
             >
               <Link href="/booking">
                 Book Now

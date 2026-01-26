@@ -23,7 +23,7 @@ export function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wide">
             FAQ
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
@@ -55,8 +55,8 @@ export function FAQ() {
                   ease: "easeOut"
                 }}
               >
-                <AccordionItem value={`item-${index}`} className="border border-slate-200 rounded-lg px-4 bg-white hover:border-cyan-300 transition-colors">
-                  <AccordionTrigger className="text-left text-slate-900 hover:text-cyan-600 py-4">
+                <AccordionItem value={`item-${index}`} className="border border-slate-200 rounded-lg px-4 bg-white hover:border-primary-light transition-colors">
+                  <AccordionTrigger className="text-left text-slate-900 hover:text-primary py-4">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-slate-600 pb-4">

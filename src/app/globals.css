@@ -33,6 +33,11 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-lighter: var(--primary-lighter);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary-subtle: var(--primary-subtle);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -51,9 +56,14 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  /* Cyan primary color for Vince Sports Massage brand */
-  --primary: oklch(0.65 0.15 195);
+  /* Vince Sports Massage Brand Colors - Consistent Cyan/Teal */
+  --primary: oklch(0.65 0.15 195); /* Main brand color - cyan-600 equivalent */
   --primary-foreground: oklch(0.985 0 0);
+  --primary-lighter: oklch(0.75 0.12 195); /* cyan-500 equivalent */
+  --primary-light: oklch(0.85 0.08 195); /* cyan-400 equivalent */
+  --primary-dark: oklch(0.55 0.18 195); /* cyan-700 equivalent */
+  --primary-muted: oklch(0.95 0.03 195); /* cyan-100 equivalent */
+  --primary-subtle: oklch(0.98 0.015 195); /* cyan-50 equivalent */
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);

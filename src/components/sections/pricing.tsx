@@ -20,7 +20,7 @@ export function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wide">
             Pricing
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
@@ -50,9 +50,9 @@ export function Pricing() {
                 transition: { duration: 0.2 }
               }}
             >
-              <Card className={`p-6 h-full flex flex-col relative ${'popular' in plan && plan.popular ? 'border-2 border-cyan-500 shadow-xl' : ''}`}>
+              <Card className={`p-6 h-full flex flex-col relative ${'popular' in plan && plan.popular ? 'border-2 border-primary-lighter shadow-xl' : ''}`}>
                 {'popular' in plan && plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-600">
+                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary">
                     Most Popular
                   </Badge>
                 )}
@@ -80,7 +80,7 @@ export function Pricing() {
                     <ul className="space-y-3 mb-6">
                       {plan.features.map((feature, i) => (
                         <li key={i} className="flex items-start">
-                          <Check className="h-5 w-5 text-cyan-600 mr-2 flex-shrink-0 mt-0.5" />
+                          <Check className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-slate-600">{feature}</span>
                         </li>
                       ))}
@@ -90,7 +90,7 @@ export function Pricing() {
 
                 <Button
                   asChild
-                  className={`w-full ${'popular' in plan && plan.popular ? 'bg-cyan-600 hover:bg-cyan-700' : ''}`}
+                  className={`w-full ${'popular' in plan && plan.popular ? 'bg-primary hover:bg-primary-dark' : ''}`}
                   variant={'popular' in plan && plan.popular ? 'default' : 'outline'}
                 >
                   <Link href="/booking">Book Now</Link>
@@ -113,7 +113,7 @@ export function Pricing() {
           </p>
           <p className="text-sm text-slate-500 mt-2">
             Not sure which session is right for you?{" "}
-            <Link href="/booking" className="text-cyan-600 hover:underline">
+            <Link href="/booking" className="text-primary hover:underline">
               Book a free 15-minute consultation call
             </Link>
           </p>

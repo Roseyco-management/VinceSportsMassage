@@ -41,9 +41,9 @@ const features = [
 ]
 
 const weightLevels = [
-  { weight: "1kg", color: "bg-cyan-400", description: "Beginner level" },
-  { weight: "2kg", color: "bg-cyan-500", description: "Intermediate level" },
-  { weight: "3kg", color: "bg-cyan-600", description: "Advanced level" },
+  { weight: "1kg", color: "bg-primary-light", description: "Beginner level" },
+  { weight: "2kg", color: "bg-primary-lighter", description: "Intermediate level" },
+  { weight: "3kg", color: "bg-primary", description: "Advanced level" },
 ]
 
 export function PosturePrimePage() {
@@ -91,7 +91,7 @@ export function PosturePrimePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-                <span className="text-cyan-600">Unlock</span> Your{" "}
+                <span className="text-primary">Unlock</span> Your{" "}
                 <span className="italic">Best</span> Posture Today
               </h1>
               <p className="text-lg text-slate-600 mb-8">
@@ -100,7 +100,7 @@ export function PosturePrimePage() {
                 difference with our innovative device and reclaim your well-being.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700">
+                <Button size="lg" className="bg-primary hover:bg-primary-dark">
                   Order Now
                 </Button>
                 <Button size="lg" variant="outline">
@@ -122,7 +122,7 @@ export function PosturePrimePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wide">
                 Common Issues
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-6">
@@ -153,7 +153,7 @@ export function PosturePrimePage() {
                   <div className="space-y-3">
                     {commonIssues.map((issue) => (
                       <div key={issue} className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                         <span className="text-slate-700">{issue}</span>
                       </div>
                     ))}
@@ -193,14 +193,14 @@ export function PosturePrimePage() {
                     <div className="space-y-2 mb-6">
                       {features.map((feature) => (
                         <div key={feature} className="flex items-center gap-2">
-                          <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0" />
+                          <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                           <span className="text-slate-700">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Therapist Approved Badge */}
-                    <div className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-800 px-4 py-2 rounded-full text-sm font-medium w-fit">
+                    <div className="inline-flex items-center gap-2 bg-primary-muted text-cyan-800 px-4 py-2 rounded-full text-sm font-medium w-fit">
                       <CheckCircle className="h-4 w-4" />
                       Therapist Approved
                     </div>
@@ -209,7 +209,7 @@ export function PosturePrimePage() {
                   {/* Product Image Placeholder */}
                   <div className="bg-gradient-to-br from-slate-200 to-slate-300 min-h-[400px] flex items-center justify-center">
                     <div className="text-center p-8">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-cyan-200 flex items-center justify-center">
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-primary-muted flex items-center justify-center">
                         <span className="text-4xl">📦</span>
                       </div>
                       <p className="text-slate-600 font-medium">Vertex PosturePrime</p>
@@ -255,8 +255,8 @@ export function PosturePrimePage() {
               >
                 <Card className="h-full text-center">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="h-6 w-6 text-cyan-600" />
+                    <div className="w-12 h-12 rounded-full bg-primary-muted flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">
                       {benefit.title}
@@ -284,7 +284,7 @@ export function PosturePrimePage() {
               transition={{ duration: 0.6 }}
               className="order-2 lg:order-1"
             >
-              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-100 to-cyan-200">
+              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-muted to-primary-muted">
                 <Image
                   src="/images/postureprime/vince-posture-assessment.png"
                   alt="Vince conducting a posture assessment session"
@@ -324,7 +324,7 @@ export function PosturePrimePage() {
                   </div>
                 ))}
               </div>
-              <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700">
+              <Button size="lg" className="bg-primary hover:bg-primary-dark">
                 Order Now
               </Button>
             </motion.div>
@@ -360,7 +360,7 @@ export function PosturePrimePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-cyan-600">
+      <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -371,12 +371,12 @@ export function PosturePrimePage() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Ready to Transform Your Posture?
             </h2>
-            <p className="text-cyan-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-primary-muted mb-8 max-w-2xl mx-auto">
               Join thousands of satisfied customers who have improved their posture
               and quality of life with PosturePrime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-cyan-700 hover:bg-cyan-50">
+              <Button size="lg" className="bg-white text-primary-dark hover:bg-primary-subtle">
                 Order PosturePrime
                 <ExternalLink className="ml-2 h-5 w-5" />
               </Button>

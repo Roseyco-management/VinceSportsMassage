@@ -50,7 +50,7 @@ export function BlogPostPage({
 
       <article className="pb-16">
         {/* Header */}
-        <header className="bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 text-white py-16 md:py-24">
+        <header className="bg-gradient-to-br from-slate-900 via-slate-800 to-primary-dark text-white py-16 md:py-24">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ export function BlogPostPage({
                 <span className="text-slate-300 truncate">{post.title}</span>
               </nav>
 
-              <Badge className="mb-4 bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/30">
+              <Badge className="mb-4 bg-primary-lighter/20 text-primary-light hover:bg-primary-lighter/30">
                 {post.category}
               </Badge>
 
@@ -134,7 +134,7 @@ export function BlogPostPage({
                   prose-p:text-slate-600 prose-p:leading-relaxed
                   prose-li:text-slate-600
                   prose-strong:text-slate-900
-                  prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:underline"
+                  prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
 
@@ -150,7 +150,7 @@ export function BlogPostPage({
                       href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-cyan-100 hover:text-cyan-600 transition-colors"
+                      className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-primary-muted hover:text-primary transition-colors"
                     >
                       <Facebook className="h-5 w-5" />
                     </a>
@@ -158,7 +158,7 @@ export function BlogPostPage({
                       href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-cyan-100 hover:text-cyan-600 transition-colors"
+                      className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-primary-muted hover:text-primary transition-colors"
                     >
                       <Twitter className="h-5 w-5" />
                     </a>
@@ -166,7 +166,7 @@ export function BlogPostPage({
                       href={`https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}&title=${shareTitle}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-cyan-100 hover:text-cyan-600 transition-colors"
+                      className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-primary-muted hover:text-primary transition-colors"
                     >
                       <Linkedin className="h-5 w-5" />
                     </a>
@@ -178,7 +178,7 @@ export function BlogPostPage({
               <Card className="mb-8">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-primary-muted flex items-center justify-center flex-shrink-0">
                       <span className="text-2xl">👤</span>
                     </div>
                     <div>
@@ -212,16 +212,16 @@ export function BlogPostPage({
               className="w-full lg:w-80 space-y-6"
             >
               {/* CTA Card */}
-              <Card className="bg-cyan-600 text-white sticky top-24">
+              <Card className="bg-primary text-white sticky top-24">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-2">
                     Ready to Feel Better?
                   </h3>
-                  <p className="text-cyan-100 text-sm mb-4">
+                  <p className="text-primary-muted text-sm mb-4">
                     Book a consultation with Vince and start your journey to better
                     posture and reduced pain.
                   </p>
-                  <Button asChild className="w-full bg-white text-cyan-700 hover:bg-cyan-50">
+                  <Button asChild className="w-full bg-white text-primary-dark hover:bg-primary-subtle">
                     <Link href="/booking">Book Your Session</Link>
                   </Button>
                 </CardContent>

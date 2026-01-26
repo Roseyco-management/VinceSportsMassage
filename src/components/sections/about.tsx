@@ -34,7 +34,7 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-              className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-100 flex items-end justify-center shadow-lg hover:shadow-xl transition-shadow"
+              className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-primary-subtle to-slate-100 flex items-end justify-center shadow-lg hover:shadow-xl transition-shadow"
             >
               <Image
                 src="/images/Vince1.png"
@@ -51,7 +51,7 @@ export function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-6 -right-6 w-48 h-48 bg-cyan-100 rounded-2xl -z-10"
+              className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary-muted rounded-2xl -z-10"
             />
           </motion.div>
 
@@ -62,7 +62,7 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wide">
               Meet {siteConfig.owner}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-6">
@@ -86,7 +86,7 @@ export function About() {
             <div className="grid sm:grid-cols-2 gap-3 mb-8">
               {credentials.map((credential) => (
                 <div key={credential} className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                   <span className="text-slate-700">{credential}</span>
                 </div>
               ))}

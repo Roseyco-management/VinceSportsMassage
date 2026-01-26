@@ -205,7 +205,7 @@ export function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-primary-dark text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -213,7 +213,7 @@ export function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-primary-light font-semibold text-sm uppercase tracking-wide">
               Our Services
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
@@ -223,7 +223,7 @@ export function ServicesPage() {
               From sports massage to posture correction, we offer a comprehensive range of
               treatments designed to help you move better, feel better, and live pain-free.
             </p>
-            <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600">
+            <Button asChild size="lg" className="bg-primary-lighter hover:bg-primary">
               <Link href="/booking">
                 Book Your Session
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -243,7 +243,7 @@ export function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wide">
               Core Services
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
@@ -288,8 +288,8 @@ export function ServicesPage() {
 
                 {/* Content */}
                 <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                  <div className="w-14 h-14 rounded-xl bg-cyan-100 flex items-center justify-center mb-4">
-                    <service.icon className="h-7 w-7 text-cyan-600" />
+                  <div className="w-14 h-14 rounded-xl bg-primary-muted flex items-center justify-center mb-4">
+                    <service.icon className="h-7 w-7 text-primary" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                     {service.name}
@@ -300,7 +300,7 @@ export function ServicesPage() {
                   <div className="space-y-2 mb-6">
                     {service.benefits.map((benefit) => (
                       <div key={benefit} className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                         <span className="text-slate-700">{benefit}</span>
                       </div>
                     ))}
@@ -325,7 +325,7 @@ export function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wide">
               Additional Treatments
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
@@ -348,8 +348,8 @@ export function ServicesPage() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-lg bg-cyan-100 flex items-center justify-center mb-4">
-                      <service.icon className="h-6 w-6 text-cyan-600" />
+                    <div className="w-12 h-12 rounded-lg bg-primary-muted flex items-center justify-center mb-4">
+                      <service.icon className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="text-xl font-semibold text-slate-900 mb-2">
                       {service.name}
@@ -360,7 +360,7 @@ export function ServicesPage() {
                     <div className="space-y-1 mb-4">
                       {service.benefits.slice(0, 2).map((benefit) => (
                         <div key={benefit} className="flex items-center gap-2 text-sm">
-                          <CheckCircle className="h-4 w-4 text-cyan-600 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
                           <span className="text-slate-600">{benefit}</span>
                         </div>
                       ))}

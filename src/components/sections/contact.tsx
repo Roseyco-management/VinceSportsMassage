@@ -19,7 +19,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wide">
               Get In Touch
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-6">
@@ -34,14 +34,14 @@ export function Contact() {
             <div className="space-y-4 mb-8">
               <Card>
                 <CardContent className="p-4 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-cyan-600" />
+                  <div className="w-12 h-12 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500">Phone</p>
                     <a
                       href={siteConfig.phoneHref}
-                      className="font-semibold text-slate-900 hover:text-cyan-600 transition-colors"
+                      className="font-semibold text-slate-900 hover:text-primary transition-colors"
                     >
                       {siteConfig.phone}
                     </a>
@@ -51,14 +51,14 @@ export function Contact() {
 
               <Card>
                 <CardContent className="p-4 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-cyan-600" />
+                  <div className="w-12 h-12 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500">Email</p>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="font-semibold text-slate-900 hover:text-cyan-600 transition-colors"
+                      className="font-semibold text-slate-900 hover:text-primary transition-colors"
                     >
                       {siteConfig.email}
                     </a>
@@ -68,8 +68,8 @@ export function Contact() {
 
               <Card>
                 <CardContent className="p-4 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-cyan-600" />
+                  <div className="w-12 h-12 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500">Location</p>
@@ -82,8 +82,8 @@ export function Contact() {
 
               <Card>
                 <CardContent className="p-4 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-6 w-6 text-cyan-600" />
+                  <div className="w-12 h-12 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500">Opening Hours</p>
