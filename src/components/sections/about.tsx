@@ -34,10 +34,10 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-              className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-primary-subtle to-slate-100 flex items-end justify-center shadow-lg hover:shadow-xl transition-shadow"
+              className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-primary-subtle to-white flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
             >
               <Image
-                src="/images/Vince1.png"
+                src="/images/vince-selfie-transparent.png"
                 alt="Vince McDowell - Sports Massage Therapist"
                 width={500}
                 height={667}

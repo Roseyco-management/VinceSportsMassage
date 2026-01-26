@@ -20,7 +20,7 @@ const featuredServices = [
     name: "Posture Correction",
     description: "Realign your body and fix postural imbalances for lasting relief from chronic pain and discomfort.",
     icon: User,
-    image: "/images/services/vince-posture-coaching.png",
+    image: "/images/services/vince-posture-assessment.png",
   },
   {
     slug: "breathwork-coaching",
