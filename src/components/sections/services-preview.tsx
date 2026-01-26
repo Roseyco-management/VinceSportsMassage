@@ -73,12 +73,12 @@ export function ServicesPreview() {
             >
               <Card className="h-full hover:shadow-xl transition-all group overflow-hidden">
                 {/* Service Image */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                <div className="relative aspect-[3/4] overflow-hidden bg-slate-100">
                   <Image
                     src={service.image}
                     alt={service.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
