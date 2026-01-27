@@ -3,6 +3,7 @@ import { revalidatePath } from "next/cache"
 import { headers } from "next/headers"
 import { NextResponse } from "next/server"
 import { verifyWebhookSecret } from "@/lib/webhook-auth"
+import { blogPostPayloadSchema } from "@/lib/validation"
 
 // Lazy initialization of Supabase client
 let supabase: SupabaseClient | null = null
@@ -57,16 +58,27 @@ export async function POST(request: Request) {
 
     const body = await request.json()
 
-    // Validate required fields
-    if (!body.title || !body.content) {
+    // Validate payload with Zod schema
+    const result = blogPostPayloadSchema.safeParse(body)
+
+    if (!result.success) {
+      // Format validation errors for readable response
+      const errors = result.error.issues.map((issue) => ({
+        field: issue.path.join("."),
+        message: issue.message,
+      }))
+
       return NextResponse.json(
-        { error: "Missing required fields: title and content" },
+        { error: "Validation failed", details: errors },
         { status: 400 }
       )
     }
 
+    // Use validated data for type-safe access
+    const validatedBody = result.data
+
     // Generate slug if not provided
-    const slug = body.slug || generateSlug(body.title)
+    const slug = validatedBody.slug || generateSlug(validatedBody.title)
 
     const db = getSupabaseClient()
 
@@ -77,27 +89,21 @@ export async function POST(request: Request) {
       .eq("slug", slug)
       .single()
 
-    if (existing) {
-      // Append timestamp to make unique
-      const uniqueSlug = `${slug}-${Date.now()}`
-      body.slug = uniqueSlug
-    } else {
-      body.slug = slug
-    }
+    const finalSlug = existing ? `${slug}-${Date.now()}` : slug
 
-    // Prepare post data
+    // Prepare post data using validated fields
     const postData = {
-      title: body.title,
-      slug: body.slug,
-      content: body.content,
-      excerpt: body.excerpt || body.content.substring(0, 160).replace(/<[^>]*>/g, "") + "...",
-      featured_image: body.imageUrl || body.featured_image || null,
-      meta_description: body.metaDescription || body.meta_description || null,
-      meta_keywords: body.keywords || body.meta_keywords || [],
-      author: body.author || "Vince McDowell",
-      status: body.publish ? "published" : "draft",
-      published_at: body.publish ? new Date().toISOString() : null,
-      n8n_execution_id: body.executionId || body.n8n_execution_id || null,
+      title: validatedBody.title,
+      slug: finalSlug,
+      content: validatedBody.content,
+      excerpt: validatedBody.excerpt || validatedBody.content.substring(0, 160).replace(/<[^>]*>/g, "") + "...",
+      featured_image: validatedBody.imageUrl || validatedBody.featured_image || null,
+      meta_description: validatedBody.metaDescription || validatedBody.meta_description || null,
+      meta_keywords: validatedBody.keywords || validatedBody.meta_keywords || [],
+      author: validatedBody.author || "Vince McDowell",
+      status: validatedBody.publish ? "published" : "draft",
+      published_at: validatedBody.publish ? new Date().toISOString() : null,
+      n8n_execution_id: validatedBody.executionId || validatedBody.n8n_execution_id || null,
       auto_generated: true,
     }
 
@@ -114,9 +120,9 @@ export async function POST(request: Request) {
       // Log error to automation_logs
       await db.from("automation_logs").insert({
         workflow_name: "Blog Automation",
-        execution_id: body.executionId || null,
+        execution_id: validatedBody.executionId || validatedBody.n8n_execution_id || null,
         status: "error",
-        payload: body,
+        payload: validatedBody,
         result: { error: error.message },
       })
 
@@ -129,9 +135,9 @@ export async function POST(request: Request) {
     // Log success
     await db.from("automation_logs").insert({
       workflow_name: "Blog Automation",
-      execution_id: body.executionId || null,
+      execution_id: validatedBody.executionId || validatedBody.n8n_execution_id || null,
       status: "success",
-      payload: body,
+      payload: validatedBody,
       result: { postId: data.id, slug: data.slug },
     })
 
