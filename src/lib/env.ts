@@ -18,6 +18,9 @@ const envSchema = z.object({
   // n8n webhook authentication (required)
   N8N_WEBHOOK_SECRET: z.string().min(1),
 
+  // Site configuration (required)
+  NEXT_PUBLIC_SITE_URL: z.string().url(),
+
   // Presentation configuration (optional with defaults)
   NEXT_PUBLIC_YOUTUBE_VIDEO_ID: z.string().default("O3jvJ8w6OOY"),
   NEXT_PUBLIC_CALENDLY_PARAMS: z
@@ -47,6 +50,7 @@ export const env = envSchema.parse({
   // Client-side environment variables (NEXT_PUBLIC_*)
   NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
   NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   NEXT_PUBLIC_YOUTUBE_VIDEO_ID: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID,
   NEXT_PUBLIC_CALENDLY_PARAMS: process.env.NEXT_PUBLIC_CALENDLY_PARAMS,
 })

@@ -2,6 +2,7 @@ import { createClient, SupabaseClient } from "@supabase/supabase-js"
 import { revalidatePath } from "next/cache"
 import { headers } from "next/headers"
 import { NextResponse } from "next/server"
+import { env } from "@/lib/env"
 import { verifyWebhookSecret } from "@/lib/webhook-auth"
 import { blogPostPayloadSchema } from "@/lib/validation"
 import { logger } from "@/lib/logger"
@@ -11,14 +12,10 @@ let supabase: SupabaseClient | null = null
 
 function getSupabaseClient() {
   if (!supabase) {
-    const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-    const key = process.env.SUPABASE_SERVICE_ROLE_KEY
-
-    if (!url || !key) {
-      throw new Error("Supabase credentials not configured")
-    }
-
-    supabase = createClient(url, key)
+    supabase = createClient(
+      env.NEXT_PUBLIC_SUPABASE_URL,
+      env.SUPABASE_SERVICE_ROLE_KEY
+    )
   }
   return supabase
 }
@@ -37,22 +34,10 @@ export async function POST(request: Request) {
     // Verify webhook secret with timing-safe comparison
     const headersList = await headers()
     const webhookSecret = headersList.get("x-webhook-secret")
-    const expectedSecret = process.env.N8N_WEBHOOK_SECRET
-
-    // Check for missing secrets (defensive programming)
-    if (!expectedSecret || !webhookSecret) {
-      logger.error("Missing webhook secret", {
-        hasExpected: !!expectedSecret,
-        hasReceived: !!webhookSecret,
-      })
-      return NextResponse.json(
-        { error: "Unauthorized" },
-        { status: 401 }
-      )
-    }
 
     // Use constant-time comparison to prevent timing attacks
-    if (!verifyWebhookSecret(webhookSecret, expectedSecret)) {
+    // env.N8N_WEBHOOK_SECRET is validated at startup, guaranteed to exist
+    if (!webhookSecret || !verifyWebhookSecret(webhookSecret, env.N8N_WEBHOOK_SECRET)) {
       logger.error("Invalid webhook secret")
       return NextResponse.json(
         { error: "Unauthorized" },
@@ -168,7 +153,7 @@ export async function POST(request: Request) {
         slug: data.slug,
         title: data.title,
         status: data.status,
-        url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${data.slug}`,
+        url: `${env.NEXT_PUBLIC_SITE_URL}/blog/${data.slug}`,
       },
     })
   } catch (error) {
