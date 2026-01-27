@@ -60,27 +60,14 @@ export function PosturePrimePage() {
               transition={{ duration: 0.6 }}
             >
               <div className="aspect-video rounded-2xl overflow-hidden bg-slate-900 shadow-xl">
-                {/* YouTube Embed Placeholder */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
-                  <div className="text-center p-8">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-600 flex items-center justify-center">
-                      <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <p className="text-slate-400 text-sm">Posture Transformation Video</p>
-                    <p className="text-slate-500 text-xs mt-1">Before and After Results</p>
-                  </div>
-                </div>
-                {/* Uncomment for actual video */}
-                {/* <iframe
-                  src="https://www.youtube.com/embed/VIDEO_ID"
-                  title="PosturePrime Transformation"
+                <iframe
+                  src="https://www.youtube.com/embed/ZU1r_qAmiy0?si=bHfp7OU2dCZmyVi-"
+                  title="PosturePrime - How to Use the Vertex"
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="w-full h-full"
-                /> */}
+                />
               </div>
             </motion.div>
 
@@ -269,6 +256,96 @@ export function PosturePrimePage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Breathing and Posture Section */}
+      <section className="py-16 md:py-24 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Why Breathing Impacts Posture
+            </h2>
+            <div className="w-12 h-1 bg-primary rounded-full mx-auto mb-6"></div>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <p className="text-xl text-slate-700 leading-relaxed">
+                Breathing isn&apos;t just about oxygen. The way we breathe affects spinal alignment,
+                nervous system regulation, and even the way we stand or sit. When we breathe
+                properly, our posture naturally improves, tension melts away, and our body
+                finds its natural balance.
+              </p>
+            </motion.div>
+
+            {/* Video */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://www.youtube.com/embed/TX7sbQkG-4w?start=164"
+                  title="Breathing for Better Posture"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Breathing and Nervous System Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center space-y-8">
+              {/* Caption */}
+              <div className="space-y-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
+                  Discover how breath impacts your nervous system in real time
+                </h3>
+                <div className="w-12 h-1 bg-primary rounded-full mx-auto"></div>
+              </div>
+
+              {/* Video Container */}
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://www.youtube.com/embed/G7GE4skZhyc?start=409"
+                  title="Breathing and Alignment Demonstration"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
