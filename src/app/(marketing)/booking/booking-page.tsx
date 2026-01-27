@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, MapPin, Clock, CheckCircle, Check } from "lucide-react"
-import { env } from "@/lib/env"
+import { clientEnv } from "@/lib/env.client"
 import { siteConfig, pricing } from "@/lib/constants"
 
 const benefits = [
@@ -201,7 +201,7 @@ export function BookingPage() {
                   {/* Calendly Widget - Responsive */}
                   <div className="min-h-[600px] md:min-h-[650px]">
                     <iframe
-                      src={`${siteConfig.calendly}${env.NEXT_PUBLIC_CALENDLY_PARAMS}`}
+                      src={`${siteConfig.calendly}${clientEnv.NEXT_PUBLIC_CALENDLY_PARAMS}`}
                       width="100%"
                       height="650"
                       frameBorder="0"

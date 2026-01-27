@@ -1,45 +1,40 @@
 import { z } from "zod"
+import { clientEnv, clientEnvSchema } from "./env.client"
 
 /**
- * Environment variable validation schema
+ * Server-side environment variable validation
  *
- * Validates all required environment variables at module load time.
+ * Validates server-side secrets at module load time.
  * Fails fast on app startup if misconfigured rather than at runtime.
  *
  * Pattern: Uses Zod schema validation (established in Phase 2)
+ *
+ * IMPORTANT: Only import this file in Server Components, API routes, or server actions.
+ * For Client Components, use '@/lib/env.client' instead.
  */
 
-const envSchema = z.object({
-  // Supabase configuration (required)
-  NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1),
+// Server-side environment variables (only available in Server Components and API routes)
+const serverEnvSchema = z.object({
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
-
-  // n8n webhook authentication (required)
   N8N_WEBHOOK_SECRET: z.string().min(1),
-
-  // Site configuration (required)
-  NEXT_PUBLIC_SITE_URL: z.string().url(),
-
-  // Presentation configuration (optional with defaults)
-  NEXT_PUBLIC_YOUTUBE_VIDEO_ID: z.string().default("O3jvJ8w6OOY"),
-  NEXT_PUBLIC_CALENDLY_PARAMS: z
-    .string()
-    .default(
-      "?hide_gdpr_banner=1&background_color=ffffff&text_color=1e293b&primary_color=0891b2"
-    ),
 })
 
+// Full environment schema (server-side only)
+const envSchema = clientEnvSchema.merge(serverEnvSchema)
+
 /**
- * Validated environment variables
+ * Full environment variables (server-side only)
  *
- * All variables are validated at module load time.
- * TypeScript provides compile-time type checking.
+ * Includes server-side secrets. Only use in:
+ * - Server Components (no "use client")
+ * - API routes
+ * - Server actions
  *
- * Usage:
+ * Usage in Server Components/API routes:
  * ```ts
  * import { env } from '@/lib/env'
- * const url = env.NEXT_PUBLIC_SUPABASE_URL // fully validated, typed
+ * const serviceKey = env.SUPABASE_SERVICE_ROLE_KEY // server-only
+ * const url = env.NEXT_PUBLIC_SUPABASE_URL // also available here
  * ```
  */
 export const env = envSchema.parse({
@@ -59,3 +54,6 @@ export const env = envSchema.parse({
  * Environment variable type (inferred from schema)
  */
 export type Env = z.infer<typeof envSchema>
+
+// Re-export client env for convenience (server-side code can import from either file)
+export { clientEnv } from "./env.client"

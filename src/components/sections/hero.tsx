@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { ArrowRight, Star } from "lucide-react"
-import { env } from "@/lib/env"
+import { clientEnv } from "@/lib/env.client"
 import { siteConfig } from "@/lib/constants"
 
 export function Hero() {
@@ -14,7 +14,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10" /> {/* Overlay for readability */}
         <iframe
-          src={`https://www.youtube.com/embed/${env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
+          src={`https://www.youtube.com/embed/${clientEnv.NEXT_PUBLIC_YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${clientEnv.NEXT_PUBLIC_YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
           title="Vince Sports Massage Background Video"
           allow="autoplay; encrypted-media"
           allowFullScreen
