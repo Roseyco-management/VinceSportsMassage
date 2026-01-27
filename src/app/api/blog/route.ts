@@ -4,6 +4,7 @@ import { headers } from "next/headers"
 import { NextResponse } from "next/server"
 import { verifyWebhookSecret } from "@/lib/webhook-auth"
 import { blogPostPayloadSchema } from "@/lib/validation"
+import { logger } from "@/lib/logger"
 
 // Lazy initialization of Supabase client
 let supabase: SupabaseClient | null = null
@@ -40,7 +41,10 @@ export async function POST(request: Request) {
 
     // Check for missing secrets (defensive programming)
     if (!expectedSecret || !webhookSecret) {
-      console.error("Missing webhook secret")
+      logger.error("Missing webhook secret", {
+        hasExpected: !!expectedSecret,
+        hasReceived: !!webhookSecret,
+      })
       return NextResponse.json(
         { error: "Unauthorized" },
         { status: 401 }
@@ -49,7 +53,7 @@ export async function POST(request: Request) {
 
     // Use constant-time comparison to prevent timing attacks
     if (!verifyWebhookSecret(webhookSecret, expectedSecret)) {
-      console.error("Invalid webhook secret")
+      logger.error("Invalid webhook secret")
       return NextResponse.json(
         { error: "Unauthorized" },
         { status: 401 }
@@ -115,7 +119,10 @@ export async function POST(request: Request) {
       .single()
 
     if (error) {
-      console.error("Error inserting blog post:", error)
+      logger.error("Database insert failed", {
+        error: error.message,
+        title: validatedBody.title,
+      })
 
       // Log error to automation_logs
       await db.from("automation_logs").insert({
@@ -156,7 +163,7 @@ export async function POST(request: Request) {
       },
     })
   } catch (error) {
-    console.error("Unexpected error in blog API:", error)
+    logger.error("Unexpected error in blog POST", { error })
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -187,7 +194,12 @@ export async function GET(request: Request) {
     const { data, error } = await query
 
     if (error) {
-      console.error("Error fetching blog posts:", error)
+      logger.error("Database query failed", {
+        error: error.message,
+        status,
+        limit,
+        offset,
+      })
       return NextResponse.json(
         { error: error.message },
         { status: 500 }
@@ -199,7 +211,7 @@ export async function GET(request: Request) {
       count: data?.length || 0,
     })
   } catch (error) {
-    console.error("Unexpected error fetching posts:", error)
+    logger.error("Unexpected error in blog GET", { error })
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
