@@ -23,7 +23,7 @@ Vitest with React Testing Library configured, tests for webhook auth and slug ge
 2. **Task 2: Webhook auth and slug tests** - `75f596e` (test)
 3. **Task 3: Zod validation tests** - `c19512d` (test)
 
-**Plan metadata:** (pending final commit)
+**Plan metadata:** `1ef21ba` (docs: complete testing infrastructure plan)
 
 ## Files Created/Modified
 
