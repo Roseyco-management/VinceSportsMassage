@@ -193,15 +193,15 @@ export function PosturePrimePage() {
                     </div>
                   </div>
 
-                  {/* Product Image Placeholder */}
-                  <div className="bg-gradient-to-br from-slate-200 to-slate-300 min-h-[400px] flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-primary-muted flex items-center justify-center">
-                        <span className="text-4xl">📦</span>
-                      </div>
-                      <p className="text-slate-600 font-medium">Vertex PosturePrime</p>
-                      <p className="text-slate-500 text-sm">Product Image</p>
-                    </div>
+                  {/* Product Image */}
+                  <div className="relative min-h-[400px] bg-slate-50">
+                    <Image
+                      src="/images/postureprime/vertex-set.jpg"
+                      alt="PosturePrime Vertex complete set - three weight levels for progressive posture training"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
                 </div>
               </CardContent>
@@ -363,8 +363,8 @@ export function PosturePrimePage() {
             >
               <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-muted to-primary-muted">
                 <Image
-                  src="/images/postureprime/vince-posture-assessment.png"
-                  alt="Vince conducting a posture assessment session"
+                  src="/images/postureprime/vince-beach-vertex.jpg"
+                  alt="Vince demonstrating PosturePrime Vertex on the beach"
                   width={600}
                   height={600}
                   className="w-full h-full object-cover"
