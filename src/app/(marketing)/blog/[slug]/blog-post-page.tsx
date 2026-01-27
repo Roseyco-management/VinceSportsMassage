@@ -18,7 +18,6 @@ import {
 } from "lucide-react"
 import { JsonLd } from "@/lib/seo"
 import { siteConfig } from "@/lib/constants"
-import { sanitizeHtml } from "@/lib/sanitize"
 
 interface BlogPostPageProps {
   post: {
@@ -42,9 +41,6 @@ export function BlogPostPage({
   articleSchema,
   breadcrumbSchema,
 }: BlogPostPageProps) {
-  // Sanitize HTML content before rendering to prevent XSS attacks
-  const cleanContent = sanitizeHtml(post.content)
-
   const shareUrl = `${siteConfig.url}/blog/${post.slug}`
   const shareTitle = encodeURIComponent(post.title)
 
@@ -129,7 +125,7 @@ export function BlogPostPage({
                 </div>
               </div>
 
-              {/* Article Content */}
+              {/* Article Content - content is sanitized on server before rendering */}
               <div
                 className="prose prose-slate prose-lg max-w-none
                   prose-headings:font-bold prose-headings:text-slate-900
@@ -139,7 +135,7 @@ export function BlogPostPage({
                   prose-li:text-slate-600
                   prose-strong:text-slate-900
                   prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
-                dangerouslySetInnerHTML={{ __html: cleanContent }}
+                dangerouslySetInnerHTML={{ __html: post.content }}
               />
 
               {/* Share */}

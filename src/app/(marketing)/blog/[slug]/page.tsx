@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { BlogPostPage } from "./blog-post-page"
 import { siteConfig } from "@/lib/constants"
 import { getArticleSchema, getBreadcrumbSchema } from "@/lib/seo"
+import { sanitizeHtml } from "@/lib/sanitize"
 
 // Placeholder - in production this would fetch from Supabase
 const placeholderPosts: Record<string, {
@@ -198,6 +199,12 @@ export default async function Page({ params }: PageProps) {
     notFound()
   }
 
+  // Sanitize HTML content on server before passing to client component
+  const sanitizedPost = {
+    ...post,
+    content: sanitizeHtml(post.content),
+  }
+
   const articleSchema = getArticleSchema({
     title: post.title,
     description: post.meta_description,
@@ -215,7 +222,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <BlogPostPage
-      post={post}
+      post={sanitizedPost}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     />
