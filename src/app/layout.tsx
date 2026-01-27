@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header, Footer } from "@/components/layout"
@@ -71,6 +71,18 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    ...(process.env.NEXT_PUBLIC_TWITTER_SITE_VERIFICATION && {
+      other: {
+        "twitter:domain": [process.env.NEXT_PUBLIC_TWITTER_SITE_VERIFICATION],
+      },
+    }),
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#0f172a", // slate-900 for consistency with header
 }
 
 export default function RootLayout({
