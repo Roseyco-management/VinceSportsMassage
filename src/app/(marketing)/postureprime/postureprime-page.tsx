@@ -342,9 +342,9 @@ export function PosturePrimePage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <div className="flex justify-center mb-6">
+            <div role="img" aria-label="5 out of 5 stars" className="flex justify-center mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" aria-hidden="true" />
               ))}
             </div>
             <blockquote className="text-xl md:text-2xl text-slate-700 italic mb-6">

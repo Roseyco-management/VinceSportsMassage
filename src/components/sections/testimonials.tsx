@@ -74,9 +74,9 @@ export function Testimonials() {
               <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10">
                 <CardContent className="p-6">
                   <Quote className="h-8 w-8 text-primary-light mb-4" />
-                  <div className="flex mb-3">
+                  <div role="img" aria-label={`${testimonial.rating} out of 5 stars`} className="flex mb-3">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                     ))}
                   </div>
                   <p className="text-slate-200 mb-6">
