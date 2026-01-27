@@ -3,7 +3,7 @@ import DOMPurify from 'dompurify';
 
 // Initialize DOMPurify with jsdom window for server-side use
 const window = new JSDOM('').window;
-const purify = DOMPurify(window as unknown as Window);
+const purify = DOMPurify(window);
 
 /**
  * Sanitize HTML content to prevent XSS attacks
