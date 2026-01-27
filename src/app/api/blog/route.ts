@@ -6,6 +6,11 @@ import { env } from "@/lib/env"
 import { verifyWebhookSecret } from "@/lib/webhook-auth"
 import { blogPostPayloadSchema } from "@/lib/validation"
 import { logger } from "@/lib/logger"
+import type {
+  ApiErrorResponse,
+  BlogPostSuccessResponse,
+  BlogPostListResponse,
+} from "@/lib/types/api"
 
 // Lazy initialization of Supabase client
 let supabase: SupabaseClient | null = null
@@ -39,7 +44,7 @@ export async function POST(request: Request) {
     // env.N8N_WEBHOOK_SECRET is validated at startup, guaranteed to exist
     if (!webhookSecret || !verifyWebhookSecret(webhookSecret, env.N8N_WEBHOOK_SECRET)) {
       logger.error("Invalid webhook secret")
-      return NextResponse.json(
+      return NextResponse.json<ApiErrorResponse>(
         { error: "Unauthorized" },
         { status: 401 }
       )
@@ -57,7 +62,7 @@ export async function POST(request: Request) {
         message: issue.message,
       }))
 
-      return NextResponse.json(
+      return NextResponse.json<ApiErrorResponse>(
         { error: "Validation failed", details: errors },
         { status: 400 }
       )
@@ -118,7 +123,7 @@ export async function POST(request: Request) {
         result: { error: error.message },
       })
 
-      return NextResponse.json(
+      return NextResponse.json<ApiErrorResponse>(
         { error: error.message },
         { status: 500 }
       )
@@ -146,7 +151,7 @@ export async function POST(request: Request) {
       })
     }
 
-    return NextResponse.json({
+    return NextResponse.json<BlogPostSuccessResponse>({
       success: true,
       post: {
         id: data.id,
@@ -158,7 +163,7 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     logger.error("Unexpected error in blog POST", { error })
-    return NextResponse.json(
+    return NextResponse.json<ApiErrorResponse>(
       { error: "Internal server error" },
       { status: 500 }
     )
@@ -194,19 +199,19 @@ export async function GET(request: Request) {
         limit,
         offset,
       })
-      return NextResponse.json(
+      return NextResponse.json<ApiErrorResponse>(
         { error: error.message },
         { status: 500 }
       )
     }
 
-    return NextResponse.json({
+    return NextResponse.json<BlogPostListResponse>({
       posts: data,
       count: data?.length || 0,
     })
   } catch (error) {
     logger.error("Unexpected error in blog GET", { error })
-    return NextResponse.json(
+    return NextResponse.json<ApiErrorResponse>(
       { error: "Internal server error" },
       { status: 500 }
     )
