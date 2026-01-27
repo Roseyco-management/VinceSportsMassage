@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -31,6 +32,7 @@ interface BlogPostPageProps {
     published_at: string
     read_time: number
     meta_description: string
+    featured_image_url?: string
   }
   articleSchema: Record<string, unknown>
   breadcrumbSchema: Record<string, unknown>
@@ -118,11 +120,24 @@ export function BlogPostPage({
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex-1 max-w-3xl mx-auto lg:mx-0"
             >
-              {/* Featured Image Placeholder */}
-              <div className="aspect-video rounded-2xl overflow-hidden bg-slate-100 mb-8">
-                <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                  <span role="img" aria-label="writing" className="text-6xl">📝</span>
-                </div>
+              {/* Featured Image */}
+              <div className="aspect-video rounded-2xl overflow-hidden bg-slate-100 mb-8 relative">
+                {post.featured_image_url ? (
+                  <Image
+                    src={post.featured_image_url}
+                    alt={post.title}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 896px"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                    <span role="img" aria-label="writing" className="text-6xl">
+                      📝
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Article Content - content is sanitized on server before rendering */}
