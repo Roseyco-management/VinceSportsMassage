@@ -109,12 +109,12 @@ Eliminate the HIGH severity XSS vulnerability and harden API security to protect
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Use DOMPurify for HTML sanitization | Industry-standard library, actively maintained, works client and server-side | — Pending |
-| Use Zod for input validation | Type-safe validation with TypeScript integration, better DX than manual checks | — Pending |
-| Implement timing-safe comparison with crypto module | Built-in Node.js crypto prevents timing attacks without external dependencies | — Pending |
-| Add Vitest for testing (not Jest) | Faster than Jest, native ESM support, better Next.js integration | — Pending |
-| Extract hardcoded values to .env | Enables environment-specific configuration (staging vs production) | — Pending |
-| Keep Framer Motion (no dynamic import) | Bundle size impact acceptable for animation quality, premature optimization to remove | — Pending |
+| Use DOMPurify for HTML sanitization | Industry-standard library, actively maintained, works client and server-side | ✅ Implemented (Phase 1) |
+| Implement timing-safe comparison with crypto module | Built-in Node.js crypto prevents timing attacks without external dependencies | ✅ Implemented (Phase 1) |
+| Use Zod for input validation | Type-safe validation with TypeScript integration, better DX than manual checks | — Pending (Phase 2) |
+| Add Vitest for testing (not Jest) | Faster than Jest, native ESM support, better Next.js integration | — Pending (Phase 8) |
+| Extract hardcoded values to .env | Enables environment-specific configuration (staging vs production) | — Pending (Phase 3) |
+| Keep Framer Motion (no dynamic import) | Bundle size impact acceptable for animation quality, premature optimization to remove | — Pending (Phase 6) |
 
 ---
-*Last updated: 2026-01-27 after initialization*
+*Last updated: 2026-01-27 after Phase 1 completion*
