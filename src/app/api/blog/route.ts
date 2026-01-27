@@ -2,6 +2,7 @@ import { createClient, SupabaseClient } from "@supabase/supabase-js"
 import { revalidatePath } from "next/cache"
 import { headers } from "next/headers"
 import { NextResponse } from "next/server"
+import { verifyWebhookSecret } from "@/lib/webhook-auth"
 
 // Lazy initialization of Supabase client
 let supabase: SupabaseClient | null = null
@@ -31,11 +32,22 @@ function generateSlug(title: string): string {
 // POST - Create new blog post (called by n8n)
 export async function POST(request: Request) {
   try {
-    // Verify webhook secret
+    // Verify webhook secret with timing-safe comparison
     const headersList = await headers()
     const webhookSecret = headersList.get("x-webhook-secret")
+    const expectedSecret = process.env.N8N_WEBHOOK_SECRET
 
-    if (webhookSecret !== process.env.N8N_WEBHOOK_SECRET) {
+    // Check for missing secrets (defensive programming)
+    if (!expectedSecret || !webhookSecret) {
+      console.error("Missing webhook secret")
+      return NextResponse.json(
+        { error: "Unauthorized" },
+        { status: 401 }
+      )
+    }
+
+    // Use constant-time comparison to prevent timing attacks
+    if (!verifyWebhookSecret(webhookSecret, expectedSecret)) {
       console.error("Invalid webhook secret")
       return NextResponse.json(
         { error: "Unauthorized" },
