@@ -121,7 +121,7 @@ export function BlogPostPage({
               {/* Featured Image Placeholder */}
               <div className="aspect-video rounded-2xl overflow-hidden bg-slate-100 mb-8">
                 <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                  <span className="text-6xl">📝</span>
+                  <span role="img" aria-label="writing" className="text-6xl">📝</span>
                 </div>
               </div>
 
@@ -179,7 +179,7 @@ export function BlogPostPage({
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-16 h-16 rounded-full bg-primary-muted flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">👤</span>
+                      <span role="img" aria-label="author" className="text-2xl">👤</span>
                     </div>
                     <div>
                       <p className="text-sm text-slate-500">Written by</p>
