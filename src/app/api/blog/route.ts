@@ -148,9 +148,18 @@ export async function POST(request: Request) {
       result: { postId: data.id, slug: data.slug },
     })
 
-    // Revalidate blog pages
-    revalidatePath("/blog")
-    revalidatePath(`/blog/${data.slug}`)
+    // Revalidate blog pages with error handling
+    try {
+      revalidatePath("/blog")
+      revalidatePath(`/blog/${data.slug}`)
+    } catch (error) {
+      // Log but don't fail the request - post was created successfully
+      logger.warn("Cache revalidation failed", {
+        error,
+        slug: data.slug,
+        message: "Post created but cache not refreshed",
+      })
+    }
 
     return NextResponse.json({
       success: true,
