@@ -6,6 +6,7 @@ import { env } from "@/lib/env"
 import { verifyWebhookSecret } from "@/lib/webhook-auth"
 import { blogPostPayloadSchema } from "@/lib/validation"
 import { logger } from "@/lib/logger"
+import { generateSlug } from "@/lib/slug"
 import type {
   ApiErrorResponse,
   BlogPostSuccessResponse,
@@ -23,14 +24,6 @@ function getSupabaseClient() {
     )
   }
   return supabase
-}
-
-// Generate URL-friendly slug from title
-function generateSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "")
 }
 
 // POST - Create new blog post (called by n8n)
