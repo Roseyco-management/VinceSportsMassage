@@ -9,8 +9,8 @@ import { ArrowRight, Hand, User, Wind, Activity } from "lucide-react"
 
 const featuredServices = [
   {
-    slug: "therapeutic-bodywork",
-    name: "Therapeutic Bodywork",
+    slug: "sports-massage",
+    name: "Sports Massage",
     description: "Comprehensive hands-on therapy to address pain, tension, and mobility issues through targeted techniques.",
     icon: Hand,
     image: "/images/services/vince-back-massage.webp",
@@ -30,11 +30,11 @@ const featuredServices = [
     image: "/images/services/vince-training-session.webp",
   },
   {
-    slug: "remediation",
-    name: "Remediation",
+    slug: "rehabilitation",
+    name: "Rehabilitation",
     description: "Targeted treatment plans for injury recovery and rehabilitation to get you back to full function.",
     icon: Activity,
-    image: "/images/services/vince-back-massage.webp",
+    image: "/images/services/Screenshot_4.webp",
   },
 ]
 

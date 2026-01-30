@@ -70,8 +70,8 @@ export const navLinks = [
 // Services data
 export const services = [
   {
-    slug: "therapeutic-bodywork",
-    name: "Therapeutic Bodywork",
+    slug: "sports-massage",
+    name: "Sports Massage",
     shortDescription: "Comprehensive hands-on therapy to address pain, tension, and mobility issues.",
     icon: "Hands",
   },
@@ -88,8 +88,8 @@ export const services = [
     icon: "Wind",
   },
   {
-    slug: "remediation",
-    name: "Remediation",
+    slug: "rehabilitation",
+    name: "Rehabilitation",
     shortDescription: "Targeted treatment plans for injury recovery and rehabilitation.",
     icon: "Activity",
   },
@@ -106,8 +106,8 @@ export const services = [
     icon: "Layers",
   },
   {
-    slug: "sports-massage",
-    name: "Sports Massage",
+    slug: "deep-tissue-massage",
+    name: "Deep Tissue Massage",
     shortDescription: "Deep tissue work for athletes and active individuals.",
     icon: "Dumbbell",
   },
@@ -148,7 +148,7 @@ export const stats = [
   { value: "250+", label: "Sessions Conducted" },
   { value: "50+", label: "Certifications" },
   { value: "100%", label: "Client Satisfaction" },
-  { value: "7 Days", label: "Weekly Availability" },
+  { value: "6 Days", label: "Weekly Availability" },
 ] as const
 
 // Pricing for services

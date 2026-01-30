@@ -63,7 +63,7 @@ export function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl">
-              Expert bodywork & posture coaching in {siteConfig.address.region}.
+              Expert sports massage, bodywork & posture coaching in {siteConfig.address.region}.
               Helping you recover faster, move freely, and perform at your best.
             </p>
 
@@ -97,7 +97,7 @@ export function Hero() {
             >
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-primary-lighter/20 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary-light">10+</span>
+                  <span className="text-2xl font-bold text-primary-light">15+</span>
                 </div>
                 <div>
                   <p className="font-semibold text-white">Years</p>

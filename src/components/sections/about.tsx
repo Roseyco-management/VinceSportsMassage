@@ -11,7 +11,7 @@ const credentials = [
   "Level 5 Sports Massage Therapist",
   "Certified Posture Specialist",
   "Breathwork Coach",
-  "10+ Years Experience",
+  "15+ Years Experience",
 ]
 
 export function About() {
@@ -69,9 +69,9 @@ export function About() {
             </h2>
             <div className="prose prose-slate max-w-none mb-8">
               <p className="text-lg text-slate-600">
-                Vince McDowell is a Bodywork Specialist, Personal Trainer, and Posture
-                Specialist based in Northern Ireland. With over a decade of experience,
-                he combines hands-on bodywork therapy, posture correction, and breathwork
+                Vince McDowell is a Sports Massage Therapist, Personal Trainer, and Posture
+                Specialist based in Northern Ireland. With over 15 years of experience,
+                he combines expert sports massage, bodywork therapy, posture correction, and breathwork
                 coaching to help clients move better, feel stronger, and live pain-free.
               </p>
               <p className="text-slate-600">

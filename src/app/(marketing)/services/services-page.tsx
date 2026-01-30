@@ -25,10 +25,10 @@ import { CTA } from "@/components/sections"
 
 const services = [
   {
-    slug: "therapeutic-bodywork",
-    name: "Therapeutic Bodywork",
+    slug: "sports-massage",
+    name: "Sports Massage",
     shortDescription: "Comprehensive hands-on therapy to address pain, tension, and mobility issues.",
-    description: "Therapeutic bodywork combines various manual therapy techniques to address the root causes of pain and dysfunction. This holistic approach targets muscles, fascia, and connective tissues to restore proper function and relieve chronic discomfort.",
+    description: "Sports massage combines various manual therapy techniques to address the root causes of pain and dysfunction. This holistic approach targets muscles, fascia, and connective tissues to restore proper function and relieve chronic discomfort.",
     benefits: [
       "Relief from chronic pain and tension",
       "Improved range of motion",
@@ -70,10 +70,10 @@ const services = [
     featured: true,
   },
   {
-    slug: "remediation",
-    name: "Remediation",
+    slug: "rehabilitation",
+    name: "Rehabilitation",
     shortDescription: "Targeted treatment plans for injury recovery and rehabilitation.",
-    description: "Whether recovering from surgery, injury, or managing a chronic condition, remediation provides structured treatment plans to restore function. We work with you to create a path back to full activity.",
+    description: "Whether recovering from surgery, injury, or managing a chronic condition, rehabilitation provides structured treatment plans to restore function. We work with you to create a path back to full activity.",
     benefits: [
       "Structured recovery plans",
       "Reduced healing time",
@@ -81,7 +81,7 @@ const services = [
       "Return to full function",
     ],
     icon: Activity,
-    image: "/images/services/vince-back-massage.png",
+    image: "/images/services/Screenshot_4.png",
     featured: true,
   },
   {
@@ -113,10 +113,10 @@ const services = [
     featured: false,
   },
   {
-    slug: "sports-massage",
-    name: "Sports Massage",
+    slug: "deep-tissue-massage",
+    name: "Deep Tissue Massage",
     shortDescription: "Deep tissue work for athletes and active individuals.",
-    description: "Sports massage is designed for active individuals looking to enhance performance, speed recovery, and prevent injury. Using deep tissue techniques, we target muscle groups specific to your activity.",
+    description: "Deep tissue massage is designed for active individuals looking to enhance performance, speed recovery, and prevent injury. Using deep tissue techniques, we target muscle groups specific to your activity.",
     benefits: [
       "Faster muscle recovery",
       "Reduced muscle soreness",
