@@ -19,7 +19,7 @@ const trustItems = [
   },
   {
     icon: Calendar,
-    value: "10+",
+    value: "15+",
     label: "Years Experience",
     color: "text-primary"
   },

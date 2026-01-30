@@ -202,7 +202,7 @@ export function BlogPostPage({
                         {post.author}
                       </h3>
                       <p className="text-slate-600 text-sm mt-1">
-                        Sports Massage Therapist & Posture Specialist with over 10 years of experience
+                        Sports Massage Therapist & Posture Specialist with over 15 years of experience
                         helping clients move better and live pain-free.
                       </p>
                     </div>
