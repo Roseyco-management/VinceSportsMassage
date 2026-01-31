@@ -21,7 +21,7 @@
 
 Plans:
 - [x] 09-01: Auth Foundation (Database schema, session utilities, role verification, middleware) — Complete
-- [ ] 09-02: Login UI & Auth Flow (Login page, session management, protected routes)
+- [x] 09-02: Login UI & Auth Flow (Login page, server action, role verification) — Complete
 - [ ] 09-03: Session Testing (E2E tests, session persistence, security verification)
 
 #### Phase 10: Blog Management UI
@@ -88,7 +88,7 @@ Plans:
 | 6. Performance Tuning | v1.0 | 1/1 | Complete | 2026-01-27 |
 | 7. Type Safety Enhancement | v1.0 | 1/1 | Complete | 2026-01-27 |
 | 8. Testing Infrastructure | v1.0 | 1/1 | Complete | 2026-01-27 |
-| 9. Authentication & Authorization | v1.1 | 1/3 | In progress | - |
+| 9. Authentication & Authorization | v1.1 | 2/3 | In progress | - |
 | 10. Blog Management UI | v1.1 | 0/? | Not started | - |
 | 11. Automation & Logs | v1.1 | 0/? | Not started | - |
 | 12. Analytics Dashboard | v1.1 | 0/? | Not started | - |
