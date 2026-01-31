@@ -56,8 +56,8 @@ See: .planning/MILESTONES.md for full details
 
 ## Session Continuity
 
-Last session: 2026-01-27
-Stopped at: v1.0 milestone complete
+Last session: 2026-01-31
+Stopped at: v1.0 milestone archived and tagged
 Resume file: None
 
-**Project status:** All technical concerns addressed. Milestone complete.
+**Project status:** v1.0 shipped and archived. Ready for next milestone planning.

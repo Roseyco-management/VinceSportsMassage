@@ -3,6 +3,8 @@
 ## Completed Milestones
 
 - ✅ [v1.0 Security Remediation](milestones/v1.0-ROADMAP.md) (Phases 1-8) — SHIPPED 2026-01-27
+  - Comprehensive security remediation addressing 23 technical concerns
+  - XSS elimination, timing-safe auth, Zod validation, accessibility, SEO, testing infrastructure
 
 ## Progress
 
